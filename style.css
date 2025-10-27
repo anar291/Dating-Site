@@ -1,0 +1,88 @@
+/* style.css
+  This file adds custom styles *on top of* Tailwind CSS.
+*/
+
+/* 1. Apply the Google Font (Inter) loaded in the HTML */
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Define the custom "brand" colors for LIGHT MODE */
+/* (Based on the placeholder image and CTA text) */
+.text-brand-primary {
+    color: #ec4899; /* pink-500 */
+}
+.bg-brand-primary {
+    background-color: #ec4899; /* pink-500 */
+}
+.bg-brand-secondary {
+    background-color: #fbcfe8; /* pink-100 */
+}
+.text-pink-100 { /* From the CTA */
+    color: #fce7f3; /* Real pink-100 text */
+}
+
+/* 3. Define the DARK MODE overrides for these custom classes */
+/* This checks if the <html> tag has the 'dark' class */
+.dark .text-brand-primary {
+    color: #f472b6; /* pink-400 (a bit brighter) */
+}
+.dark .bg-brand-primary {
+    /* Stays the same, it's a bright button */
+    background-color: #ec4899; 
+}
+.dark .bg-brand-secondary {
+    /* Becomes a very dark, saturated pink for a deep bg */
+    background-color: rgb(30 41 59); 
+}
+.dark .text-pink-100 {
+   color: #fce7f3; /* Stays the same */
+}
+
+
+/* 4. Logic for showing/hiding the correct theme icon */
+
+/* By default (light mode), hide the sun */
+#theme-icon-light {
+    display: none;
+}
+/* By default (light mode), show the moon */
+#theme-icon-dark {
+    display: block;
+}
+
+/* When .dark is active, show the sun */
+.dark #theme-icon-light {
+    display: block;
+}
+/* When .dark is active, hide the moon */
+.dark #theme-icon-dark {
+    display: none;
+}
+
+@keyframes imageFade {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; } /* Fade-in (5% of 2s = 0.1s) */
+    33%  { opacity: 1; } /* Hold (28% of 2s = 0.56s) */
+    38%  { opacity: 0; } /* Fade-out (5% of 2s = 0.1s) */
+    100% { opacity: 0; } /* Stay hidden for the rest */
+}
+
+/* Apply the animation to each image */
+.hero-image-animation {
+    /* This animation duration is correct for a 2s total loop */
+    animation: imageFade 2s infinite ease-in-out;
+    animation-fill-mode: both;
+    opacity: 0; 
+}
+
+/* These delays are correct for a 2s total loop */
+.animation-delay-0s {
+    animation-delay: 0s;
+}
+.animation-delay-0_66s {
+    animation-delay: 0.66s; 
+}
+.animation-delay-1_33s {
+    animation-delay: 1.33s;
+}
