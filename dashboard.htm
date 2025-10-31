@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courting - Discover</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#fd5068', // Your Red/Pink Color
+                        'brand-secondary': '#fdf0f2', // Your Light Pink
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* A small style for the card "pop" animation */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .pop-in {
+            animation: popIn 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex flex-col min-h-screen">
+
+    <header class="bg-white dark:bg-gray-800 w-full sticky top-0 z-50 shadow-sm dark:border-b dark:border-gray-700">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
+            
+            <a href="index.html" class="text-3xl font-bold text-brand-primary">Courting</a>
+            
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="#" class="font-medium text-brand-primary dark:text-brand-primary transition-colors">
+                    <i class="ph-fill ph-flame text-xl align-middle"></i> Discover
+                </a></li>
+                <li><a href="#" class="font-medium text-gray-600 dark:text-gray-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors">
+                    <i class="ph-fill ph-chats-circle text-xl align-middle"></i> Matches
+                </a></li>
+            </ul>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="h-10 w-10 rounded-full bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=100&h=100" alt="My Profile" class="h-full w-full object-cover">
+                </a>
+                <button id="theme-toggle" class="text-3xl text-gray-600 hover:text-brand-primary transition-colors dark:text-gray-300 dark:hover:text-brand-primary">
+                    <i id="theme-icon-light" class="ph ph-sun"></i>
+                    <i id="theme-icon-dark" class="ph ph-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+        
+        <div id="card-container" class="relative w-full max-w-sm h-[500px] md:h-[550px] mb-6">
+            </div>
+        
+        <div class="flex space-x-8">
+            <button id="dislike-btn" class="flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-gray-700 text-red-500 text-4xl shadow-lg transform hover:scale-105 transition-transform active:scale-95">
+                <i class="ph ph-x-bold"></i>
+            </button>
+            <button id="like-btn" class="flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-gray-700 text-green-500 text-4xl shadow-lg transform hover:scale-105 transition-transform active:scale-95">
+                <i class="ph ph-heart-bold"></i>
+            </button>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
