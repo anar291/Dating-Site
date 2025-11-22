@@ -9,197 +9,185 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+<body class="bg-gray-50 text-gray-800 dark:bg-[#0f0c29] dark:text-gray-200 transition-colors duration-300 font-inter selection:bg-pink-500 selection:text-white cursor-auto md:cursor-none">
 
-    <header class="bg-white dark:bg-gray-800 w-full sticky top-0 z-50 shadow-sm dark:border-b dark:border-gray-700">
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-header">
         <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
-            <a href="#" class="text-3xl font-bold text-brand-primary">Courting</a>
+            <a href="#" class="text-3xl font-extrabold font-poppins gradient-text hover-trigger">Courting.</a>
             
             <ul class="hidden md:flex items-center space-x-8">
-                <li><a href="#features" class="font-medium text-gray-600 dark:text-gray-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors">Features</a></li>
-                <li><a href="#how-it-works" class="font-medium text-gray-600 dark:text-gray-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors">How It Works</a></li>
-                <li><a href="#safety" class="font-medium text-gray-600 dark:text-gray-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors">Safety</a></li>
+                <li><a href="#features" class="nav-link hover-trigger">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link hover-trigger">How It Works</a></li>
+                <li><a href="#safety" class="nav-link hover-trigger">Safety</a></li>
             </ul>
             
             <div class="flex items-center space-x-4">
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="login.html" class="font-medium text-gray-600 dark:text-gray-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors">Log In</a>
-                    <a href="signup.html" class="bg-brand-primary text-white font-medium py-2 px-5 rounded-full shadow-lg hover:opacity-90 transition-all active:scale-95">
+                    <a href="login.html" class="nav-link hover-trigger">Log In</a>
+                    <a href="signup.html" class="btn-gradient text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 hover-trigger">
                         Join Now
                     </a>
                 </div>
-
-                <button id="theme-toggle" class="text-3xl text-gray-600 hover:text-brand-primary transition-colors dark:text-gray-300 dark:hover:text-brand-primary">
-                    <i id="theme-icon-light" class="ph ph-sun"></i>
-                    <i id="theme-icon-dark" class="ph ph-moon"></i>
-                </button>
-                <button id="mobile-menu-button" class="md:hidden text-3xl text-brand-primary">
+                <button id="mobile-menu-button" class="md:hidden text-3xl text-pink-500">
                     <i class="ph ph-list"></i>
                 </button>
             </div>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg p-4">
-            <a href="#features" class="block py-2 px-3 rounded text-gray-600 dark:text-gray-300 hover:bg-brand-secondary dark:hover:bg-gray-700">Features</a>
-            <a href="#how-it-works" class="block py-2 px-3 rounded text-gray-600 dark:text-gray-300 hover:bg-brand-secondary dark:hover:bg-gray-700">How It Works</a>
-            <a href="#safety" class="block py-2 px-3 rounded text-gray-600 dark:text-gray-300 hover:bg-brand-secondary dark:hover:bg-gray-700">Safety</a>
-            <a href="login.html" class="block py-2 px-3 rounded text-gray-600 dark:text-gray-300 hover:bg-brand-secondary dark:hover:bg-gray-700">Log In</a>
-            <a href="signup.html" class="mt-2 block text-center bg-brand-primary text-white font-medium py-2 px-5 rounded-full shadow-lg active:scale-95">
-                Join Now
-            </a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-900/95 backdrop-blur-md shadow-lg p-4 absolute w-full border-b border-gray-200 dark:border-gray-800">
+            <a href="#features" class="block py-3 px-3 rounded-lg font-medium hover:bg-pink-50 dark:hover:bg-gray-800">Features</a>
+            <a href="#how-it-works" class="block py-3 px-3 rounded-lg font-medium hover:bg-pink-50 dark:hover:bg-gray-800">How It Works</a>
+            <a href="login.html" class="block py-3 px-3 rounded-lg font-medium hover:bg-pink-50 dark:hover:bg-gray-800">Log In</a>
+            <a href="signup.html" class="mt-4 block text-center btn-gradient text-white font-bold py-3 px-5 rounded-full shadow-md">Join Now</a>
         </div>
     </header>
 
     <main>
+        <section id="hero" class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
-        <section id="hero" class="bg-brand-secondary dark:bg-gray-800">
-            <div class="max-w-6xl mx-auto p-4 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-left">
-                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
-                        Meet your <span class="text-brand-primary">Kindred.</span>
+            <div class="max-w-6xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="text-center md:text-left scroll-element">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight font-poppins">
+                        Meet your <br />
+                        <span class="gradient-text typing-container">
+                            <span id="typing-text"></span><span class="cursor-blink">|</span>
+                        </span>
                     </h1>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-lg mx-auto md:mx-0">
-                        Stop swiping endlessly. At Courting, we believe in intentional dating for real, lasting connections. Find someone who truly gets you.
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Stop swiping endlessly. Experience intentional dating designed for real, lasting connections. Find someone who truly gets you.
                     </p>
-                    <div class="mt-10">
-                        <a href="#" class="inline-block bg-brand-primary text-white font-bold py-4 px-10 rounded-full shadow-xl hover:opacity-90 transition-all active:scale-95 text-lg">
-                            Find Your Match
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#" class="btn-gradient text-white font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 text-lg hover-trigger relative overflow-hidden group">
+                            <span class="relative z-10">Find Your Match</span>
+                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                         </a>
+                        <a href="#how-it-works" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-white font-semibold py-4 px-10 rounded-full shadow-md border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover-trigger">
+                            How it Works
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center justify-center md:justify-start space-x-4 opacity-80">
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900" src="https://i.pravatar.cc/100?img=1" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900" src="https://i.pravatar.cc/100?img=5" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900" src="https://i.pravatar.cc/100?img=8" alt="User">
+                        </div>
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">10k+ Matches made</p>
                     </div>
                 </div>
                 
-                <div class="hidden md:block relative h-[500px] w-full max-w-[600px] mx-auto">
-    <img src="https://images.pexels.com/photos/984923/pexels-photo-984923.jpeg?cs=srgb&dl=pexels-vera-arsic-304265-984923.jpg&fm=jpg" 
-         alt="A happy couple 1"
-         class="absolute inset-0 rounded-2xl shadow-xl w-full h-full object-cover hero-image-animation animation-delay-0s">
-    <img src="https://www.authorlove.com/wp-content/uploads/2017/04/Happy-Couple-Love-Pure-scaled.jpg" 
-         alt="A happy couple 2"
-         class="absolute inset-0 rounded-2xl shadow-xl w-full h-full object-cover hero-image-animation animation-delay-0_66s">
-    <img src="https://t4.ftcdn.net/jpg/13/21/52/59/360_F_1321525993_hG7oX1JvhGKJ5S3fVeA4XSfdN6WYpRxQ.jpg" 
-         alt="A happy couple 3"
-         class="absolute inset-0 rounded-2xl shadow-xl w-full h-full object-cover hero-image-animation animation-delay-1_33s">
-</div>
+                <div class="relative h-[550px] w-full max-w-[500px] mx-auto md:ml-auto scroll-element delay-200 hover-trigger">
+                    <div class="absolute inset-0 border-2 border-pink-200 dark:border-pink-900/30 rounded-[2rem] transform rotate-3 scale-105 z-0"></div>
+                    <div class="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl z-10 bg-gray-200 dark:bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover hero-image-animation animation-delay-0s">
+                        <img src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover hero-image-animation animation-delay-4s">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover hero-image-animation animation-delay-8s">
+                        
+                        <div class="absolute bottom-8 left-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-3 rounded-2xl shadow-lg flex items-center gap-3 animate-bounce-slow">
+                            <div class="bg-pink-100 p-2 rounded-full text-pink-600"><i class="ph-fill ph-heart text-xl"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-500">New Match</p>
+                                <p class="text-sm font-bold dark:text-white">Sophia, 19</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="features" class="py-20 md:py-28 scroll-mt-20">
+        <section id="features" class="py-24 bg-white dark:bg-[#151525] scroll-mt-20">
             <div class="max-w-6xl mx-auto p-4 text-center">
-                <h2 class="text-4xl font-bold mb-4 dark:text-white">Date Intentionally</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">
-                    We designed Courting to be different. Here's what sets us apart.
+                <h2 class="text-4xl font-bold mb-4 dark:text-white font-poppins scroll-element">Date Intentionally</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16 scroll-element delay-100">
+                    We designed Courting to be different.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
-                        <i class="ph-fill ph-user-focus text-brand-primary text-5xl"></i>
-                        <h3 class="text-2xl font-bold mt-5 mb-2 dark:text-white">Verified Profiles</h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Say goodbye to fakes. Our mandatory verification process ensures you're talking to real, genuine people.
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-container">
+                    <div class="tilt-card scroll-element delay-200 hover-trigger">
+                        <div class="tilt-content p-8 rounded-3xl bg-gray-50 dark:bg-gray-800/50 border border-transparent hover:border-pink-200 dark:hover:border-pink-900 transition-all">
+                            <div class="w-16 h-16 mx-auto bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mb-6 text-pink-600 dark:text-pink-400 text-3xl">
+                                <i class="ph-fill ph-user-focus"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 dark:text-white font-poppins">Verified Profiles</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Say goodbye to catfishing. AI-powered verification ensures you're talking to humans.</p>
+                        </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
-                        <i class="ph-fill ph-brain text-brand-primary text-5xl"></i>
-                        <h3 class="text-2xl font-bold mt-5 mb-2 dark:text-white">Smart Matching</h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Our algorithm focuses on deep compatibility—values, interests, and life goals—not just photos.
-                        </p>
+
+                    <div class="tilt-card scroll-element delay-300 hover-trigger">
+                        <div class="tilt-content p-8 rounded-3xl bg-gray-50 dark:bg-gray-800/50 border border-transparent hover:border-purple-200 dark:hover:border-purple-900 transition-all">
+                            <div class="w-16 h-16 mx-auto bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400 text-3xl">
+                                <i class="ph-fill ph-brain"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 dark:text-white font-poppins">Smart Matching</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Our algorithm ignores surface-level data and focuses on values and goals.</p>
+                        </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
-                        <i class="ph-fill ph-chats-circle text-brand-primary text-5xl"></i>
-                        <h3 class="text-2xl font-bold mt-5 mb-2 dark:text-white">Meaningful Chat</h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            We encourage real conversations. Get to know someone's personality before you decide to meet.
-                        </p>
+
+                    <div class="tilt-card scroll-element delay-400 hover-trigger">
+                        <div class="tilt-content p-8 rounded-3xl bg-gray-50 dark:bg-gray-800/50 border border-transparent hover:border-orange-200 dark:hover:border-orange-900 transition-all">
+                            <div class="w-16 h-16 mx-auto bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mb-6 text-orange-600 dark:text-orange-400 text-3xl">
+                                <i class="ph-fill ph-chats-circle"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 dark:text-white font-poppins">Meaningful Chat</h3>
+                            <p class="text-gray-600 dark:text-gray-400">We encourage deep conversations. Ice-breaker prompts help you skip the "hey".</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
-            <div class="max-w-4xl mx-auto p-4 text-center">
-                <h2 class="text-4xl font-bold mb-16 dark:text-white">Start Your Journey in 3 Steps</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0 border-t-2 border-dashed border-gray-300 dark:border-gray-600" style="margin-top: -36px; z-index: 0;"></div>
+        <section id="how-it-works" class="py-24 dark:bg-[#0f0c29] relative overflow-hidden">
+            <div class="max-w-5xl mx-auto p-4 text-center relative z-10">
+                <h2 class="text-4xl font-bold mb-20 dark:text-white font-poppins scroll-element">Start Your Journey</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    <div class="hidden md:block absolute top-[2.5rem] left-0 w-full h-1 bg-gradient-to-r from-pink-200 via-purple-200 to-pink-200 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 rounded-full" style="z-index: 0;"></div>
 
-                    <div class="flex flex-col items-center z-10">
-                        <div class="flex items-center justify-center w-16 h-16 bg-brand-secondary text-brand-primary text-2xl font-bold rounded-full border-4 border-white dark:border-gray-900 shadow-md">1</div>
-                        <h3 class="text-xl font-semibold mt-4 mb-2 dark:text-white">Create Your Profile</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Showcase your true self. Add your photos, interests, and what you're looking for.</p>
+                    <div class="flex flex-col items-center z-10 group scroll-element delay-100">
+                        <div class="flex items-center justify-center w-20 h-20 bg-white dark:bg-gray-800 text-pink-500 text-3xl font-bold rounded-full border-4 border-pink-100 dark:border-gray-700 shadow-xl group-hover:scale-110 transition-transform duration-300 hover-trigger">1</div>
+                        <h3 class="text-xl font-bold mt-6 mb-3 dark:text-white font-poppins">Create Profile</h3>
                     </div>
-                    <div class="flex flex-col items-center z-10">
-                        <div class="flex items-center justify-center w-16 h-16 bg-brand-secondary text-brand-primary text-2xl font-bold rounded-full border-4 border-white dark:border-gray-900 shadow-md">2</div>
-                        <h3 class="text-xl font-semibold mt-4 mb-2 dark:text-white">Browse & Match</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Receive a curated list of potential matches. Send a 'like' to connect.</p>
+
+                    <div class="flex flex-col items-center z-10 group scroll-element delay-200">
+                        <div class="flex items-center justify-center w-20 h-20 bg-white dark:bg-gray-800 text-purple-500 text-3xl font-bold rounded-full border-4 border-purple-100 dark:border-gray-700 shadow-xl group-hover:scale-110 transition-transform duration-300 hover-trigger">2</div>
+                        <h3 class="text-xl font-bold mt-6 mb-3 dark:text-white font-poppins">Browse & Match</h3>
                     </div>
-                    <div class="flex flex-col items-center z-10">
-                        <div class="flex items-center justify-center w-16 h-16 bg-brand-secondary text-brand-primary text-2xl font-bold rounded-full border-4 border-white dark:border-gray-900 shadow-md">3</div>
-                        <h3 class="text-xl font-semibold mt-4 mb-2 dark:text-white">Start Courting</h3>
-                        <p class="text-gray-600 dark:text-gray-400">If they like you back, it's a match! Start a genuine conversation.</p>
+
+                    <div class="flex flex-col items-center z-10 group scroll-element delay-300">
+                        <div class="flex items-center justify-center w-20 h-20 bg-white dark:bg-gray-800 text-orange-500 text-3xl font-bold rounded-full border-4 border-orange-100 dark:border-gray-700 shadow-xl group-hover:scale-110 transition-transform duration-300 hover-trigger">3</div>
+                        <h3 class="text-xl font-bold mt-6 mb-3 dark:text-white font-poppins">Start Courting</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="safety" class="py-20 md:py-32 scroll-mt-20 bg-brand-primary text-white">
-            <div class="max-w-4xl mx-auto p-4 text-center">
-                <h2 class="text-4xl font-bold mb-4">Ready to find your person?</h2>
-                <p class="text-lg text-pink-100 max-w-xl mx-auto mb-10">
-                    Join a community of thousands of singles who are tired of the games and ready for something real.
-                </p>
-                <a href="#" class="inline-block bg-white text-brand-primary font-bold py-4 px-10 rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95 text-lg">
+        <section id="safety" class="py-28 btn-gradient text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+            <div class="max-w-4xl mx-auto p-4 text-center relative z-10 scroll-element">
+                <h2 class="text-5xl font-extrabold mb-6 font-poppins">Ready to find your person?</h2>
+                <a href="signup.html" class="inline-block bg-white text-pink-600 font-bold py-4 px-12 rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95 text-lg hover-trigger mt-8">
                     Join Courting for Free
                 </a>
             </div>
         </section>
-        
     </main>
 
-    <footer class="bg-gray-800 text-gray-300">
-        <div class="max-w-6xl mx-auto p-10 md:p-16 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <a href="#" class="text-3xl font-bold text-white">Courting</a>
-                <p class="text-gray-400 mt-2">Love, intentionally.</p>
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-100 mb-3">Company</h4>
-                <ul>
-                    <li><a href="#" class="hover:underline">About Us</a></li>
-                    <li><a href="#" class="hover:underline">Careers</a></li>
-                    <li><a href="#" class="hover:underline">Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-100 mb-3">Legal</h4>
-                <ul>
-                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:underline">Terms of Use</a></li>
-                    <li><a href="#" class="hover:underline">Safety Tips</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-100 mb-3">Follow Us</h4>
-                <div class="flex space-x-4 text-2xl">
-                    <a href="#" class="hover:text-white"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="#" class="hover:text-white"><i class="ph ph-facebook-logo"></i></a>
-                    <a href="#" class="hover:text-white"><i class="ph ph-twitter-logo"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="bg-gray-900 text-center p-4">
-            <p class="text-gray-500 text-sm">
-                © 2025 Courting by Arnab Pandey. All rights reserved.
-            </p>
+    <footer class="bg-gray-900 text-gray-300 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto p-10 text-center">
+            <a href="#" class="text-3xl font-bold font-poppins gradient-text">Courting.</a>
+            <p class="text-gray-500 mt-4 text-sm">© 2025 Courting by Arnab Pandey.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-    <script src="script.js" defer></script>
-
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
